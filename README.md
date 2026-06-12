@@ -94,13 +94,11 @@ https://www.kaggle.com/datasets/harshsingh2209/medical-insurance-payout?select=e
 
 ## 🔬 Методы и алгоритмы
 Основные алгоритмы:
-* Decision Trees: CART алгоритм с критериями:
-* Классификация: Gini impurity, Entropy
+* Decision Trees: алгоритм с критериями: MSE, MAE.
 * Bagging: Bootstrap aggregating для снижения variance
-* Random Forest:
-* Случайные подпространства признаков
+* Random Forest: Случайные подпространства признаков
 * OOB (Out-of-Bag) валидация
-* Feature Importance
+* Feature Importance (SHAP)
 * Gradient Boosting:
   - XGBoost: Градиентный бустинг с регуляризацией
   - LightGBM: Гистограммный бустинг
