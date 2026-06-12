@@ -117,9 +117,14 @@ https://www.kaggle.com/datasets/harshsingh2209/medical-insurance-payout?select=e
 
 ## 📈 Ожидаемые результаты
 
-* Метрики: $R^2>0.8$; 
+* Метрики: $R^2>0.8$; MAE>3e+3; RMSE>3e+3; 
 * Интерпретация: Выявление ключевых факторов
-* Визуализация: 
+* Визуализация: рассмотреть графики типа:
+ - "Предсказание vs Факт" (predicted vs actual scatter plot); 
+ - Ошибка vs Предсказание" (residuals vs predicted);
+ - Гистограмма абсолютных ошибок (распределение |y - ŷ|);
+ - Анализ объектов с максимальной ошибкой (top-N worst predictions);
+  - Анализ ошибок по подгруппам (если есть категориальные признаки).
 
 ## 📚 Используемые библиотеки:
 ### Анализ данных:
@@ -187,7 +192,7 @@ shap>=0.43.0
 * Перейдите в папку проекта:
 
 ```bash
-cd D:\...\Practice_DecisionTreeClassifier
+cd D:\...\Practice_DecisionTreeRegressor
 ```
 * Доустановите библиотеки:
 
@@ -203,7 +208,7 @@ jupyter notebook
 1. Утром: открыть Anaconda Prompt
 2. Перейти в папку проекта
 ```bash
-cd D:\...\Practice_DecisionTreeClassifier
+cd D:\...\Practice_DecisionTreeRegressor
 ```
 
 3. Запустить Jupyter
