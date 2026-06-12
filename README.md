@@ -98,7 +98,7 @@ https://www.kaggle.com/datasets/harshsingh2209/medical-insurance-payout?select=e
 * Bagging: Bootstrap aggregating для снижения variance
 * Random Forest: Случайные подпространства признаков
 * OOB (Out-of-Bag) валидация
-* Feature Importance (SHAP)
+* Feature Importance: feature_importances_
 * Gradient Boosting:
   - XGBoost: Градиентный бустинг с регуляризацией
   - LightGBM: Гистограммный бустинг
@@ -106,21 +106,20 @@ https://www.kaggle.com/datasets/harshsingh2209/medical-insurance-payout?select=e
 * SHAP для интерпретации
 
 ## Метрики качества:
-Для классификации:
-* Accuracy, Precision, Recall, F1-Score
-* ROC-AUC, PR-AUC
-* onfusion Matrix
+Для регресии:
+* MAE, MSE, RMSE, $R^2$, MAPE
+
 
 ## Дополнительные техники:
-* Cross-Validation: StratifiedKFold / KFold
+* Cross-Validation: KFold
 * Hyperparameter Tuning: RandomizedSearchCV, Optuna
 * Feature Engineering: Создание новых признаков
 
 ## 📈 Ожидаемые результаты
-Для классификации
-* Метрики: ROC-AUC > 0.85, F1-Score > 0.80
-* Интерпретация: Выявление ключевых факторов (например, курение для Stroke Prediction)
-* Визуализация: ROC-кривые, Confusion Matrix
+
+* Метрики: $R^2>0.8$; 
+* Интерпретация: Выявление ключевых факторов
+* Визуализация: 
 
 ## 📚 Используемые библиотеки:
 ### Анализ данных:
