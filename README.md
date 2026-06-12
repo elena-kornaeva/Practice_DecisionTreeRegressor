@@ -1,22 +1,22 @@
 
 # 📊 Учебная практика
-##  Построение и анализ ансамблевых моделей (Random Forest, Gradient Boosting): классификация
+##  Построение и анализ ансамблевых моделей (Random Forest, Gradient Boosting): регрессия
 
 ### 👥 Исполнители
-- Студент 1: [Bairamov Alan]
-- Студент 2: [Ermolaev Kirill]
+- Студент 1: [Kamalov Bulat]
+- Студент 2: [Umakhanov Mansur]
 
 ### 📅 Срок выполнения
 Июнь 2026 (6 недель)
 
 ## 🎯 Цель проекта
-Построение и анализ ансамблевых моделей на основе решающих деревьев для задачи классификации: 
-### датасет: Heart Disease Dataset
-- **Источник:** [Kaggle](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset?select=heart.csv)
-- **Автор:** johnsmith88 (оригинальные данные: Cleveland Clinic Foundation)
-- **Лицензия:** Не указана (Unknown)
-- **Задача:** Классификация — прогнозирование наличия заболевания сердца
-- **Размер:** 303 объекта, 14 признаков
+Построение и анализ ансамблевых моделей на основе решающих деревьев для задачи регрессии: 
+### датасет: Medical Insurance
+- **Источник:** [Kaggle](https://www.kaggle.com/datasets/harshsingh2209/medical-insurance-payout)
+- **Автор:** harshsingh2209 (оригинальные данные: Miriam Ortez)
+- **Лицензия:** CC0 (Public Domain)
+- **Задача:** Регрессия — прогнозирование стоимости медицинской страховки
+- **Размер:** 1338 объектов, 7 признаков
 
 
 В рамках учебной практики выполняется построение и сравнительный анализ ансамблевых моделей машинного обучения:
@@ -105,6 +105,7 @@ https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset?select=heart.c
   - XGBoost: Градиентный бустинг с регуляризацией
   - LightGBM: Гистограммный бустинг
   - CatBoost: Обработка категориальных признаков
+* SHAP для интерпретации
 
 ## Метрики качества:
 Для классификации:
@@ -128,11 +129,13 @@ https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset?select=heart.c
 * pandas >= 2.0.0
 * numpy >= 1.24.0
 
-### Машинное обучение:
-* scikit-learn >= 1.3.0
-* xgboost >= 2.0.0 
-*  lightgbm >= 4.0.0
-*  catboost >= 1.2.0
+# Ансамблевые методы
+xgboost>=2.0.0
+lightgbm>=4.0.0
+catboost>=1.2.0
+
+# Интерпретация моделей
+shap>=0.43.0
 
 ### Визуализация:*
 * matplotlib >= 3.7.0
