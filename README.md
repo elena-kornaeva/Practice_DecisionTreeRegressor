@@ -131,12 +131,12 @@ https://www.kaggle.com/datasets/harshsingh2209/medical-insurance-payout?select=e
 * pandas >= 2.0.0
 * numpy >= 1.24.0
 
-# Ансамблевые методы
+### Ансамблевые методы
 xgboost>=2.0.0
 lightgbm>=4.0.0
 catboost>=1.2.0
 
-# Интерпретация моделей
+### Интерпретация моделей
 shap>=0.43.0
 
 ### Визуализация:*
