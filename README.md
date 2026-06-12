@@ -63,8 +63,8 @@ practice_DecisionTreeClassier/
 
 ### 1. Клонирование репозитория
 ```bash
-git clone https://github.com/elena-kornaeva/Practice_DecisionTreeClassifier.git
-cd Practice_DecisionTreeClassifier
+git clone https://github.com/elena-kornaeva/Practice_DecisionTreeRegressor.git
+cd Practice_DecisionTreeRegressor
 ```
 или через GitHubDesktop (рекомендуется): File -> Clone Repository
 
@@ -83,7 +83,7 @@ conda install -r requirements.txt
 ## Загрузка данных
 Скачайте датасеты с Kaggle и поместите их в предварительно созданную папку data/raw/:
 
-https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset?select=heart.csv
+https://www.kaggle.com/datasets/harshsingh2209/medical-insurance-payout?select=expenses.csv
 
 ## Последовательность работы:
 * 01_EDA.ipynb - Разведочный анализ данных и предобработка
