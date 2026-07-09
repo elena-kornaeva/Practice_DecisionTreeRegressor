@@ -1,0 +1,59 @@
+{
+  "data": {
+    "raw_rows": 1338,
+    "raw_cols": 7,
+    "missing_total": 0,
+    "train_rows": 801,
+    "val_rows": 268,
+    "test_rows": 268,
+    "features_after_encoding": 8
+  },
+  "metrics": [
+    {
+      "model": "Одиночное дерево",
+      "R2": 0.839899973890786,
+      "MAE": 1723.630834924401,
+      "RMSE": 4564.536813600133
+    },
+    {
+      "model": "Bagging",
+      "R2": 0.8475187948741552,
+      "MAE": 2010.7789249112243,
+      "RMSE": 4454.604696043066
+    },
+    {
+      "model": "Random Forest",
+      "R2": 0.848513734867768,
+      "MAE": 1964.7586015872866,
+      "RMSE": 4440.047761455655
+    }
+  ],
+  "top_rf_features": [
+    {
+      "feature": "smoker_yes",
+      "importance": 0.5186101229107613
+    },
+    {
+      "feature": "age",
+      "importance": 0.3763300592834468
+    },
+    {
+      "feature": "bmi",
+      "importance": 0.050162848663361174
+    }
+  ],
+  "top_bagging_features": [
+    {
+      "feature": "smoker_yes",
+      "importance": 0.5199680419350365
+    },
+    {
+      "feature": "age",
+      "importance": 0.38432267704890977
+    },
+    {
+      "feature": "bmi",
+      "importance": 0.04415079317893528
+    }
+  ]
+}
