@@ -1,0 +1,33 @@
+Модель,Признак,Важность
+Одиночное дерево,age,0.5279919621986459
+Одиночное дерево,bmi,0.0726982405328795
+Одиночное дерево,children,0.05396440188263313
+Одиночное дерево,sex_male,0.012397081967923516
+Одиночное дерево,smoker_yes,0.32386575455893013
+Одиночное дерево,region_northwest,0.0005679269227051116
+Одиночное дерево,region_southeast,0.005643775649487225
+Одиночное дерево,region_southwest,0.002870856286795551
+Bagging,age,0.38432267704890977
+Bagging,bmi,0.04415079317893528
+Bagging,children,0.04226667774574034
+Bagging,sex_male,0.002729497033444909
+Bagging,smoker_yes,0.5199680419350365
+Bagging,region_northwest,0.004290265686088473
+Bagging,region_southeast,0.0011163506365341603
+Bagging,region_southwest,0.0011556967353104593
+Random Forest,age,0.3763300592834468
+Random Forest,bmi,0.050162848663361174
+Random Forest,children,0.042317817676725385
+Random Forest,sex_male,0.0042427853561968435
+Random Forest,smoker_yes,0.5186101229107613
+Random Forest,region_northwest,0.003832865873578595
+Random Forest,region_southeast,0.0025763982045178737
+Random Forest,region_southwest,0.0019271020314121745
+Gradient Boosting,age,0.3891345168336996
+Gradient Boosting,bmi,0.03957819569620278
+Gradient Boosting,children,0.04419382758707726
+Gradient Boosting,sex_male,0.0028344786742150597
+Gradient Boosting,smoker_yes,0.5201111738057574
+Gradient Boosting,region_northwest,0.00011541836020401019
+Gradient Boosting,region_southeast,0.0018327790239045887
+Gradient Boosting,region_southwest,0.0021996100189393113

@@ -1,0 +1,82 @@
+{
+  "coarse_best_params": {
+    "subsample": 0.8,
+    "n_estimators": 200,
+    "min_samples_split": 2,
+    "min_samples_leaf": 8,
+    "max_features": 1.0,
+    "max_depth": 3,
+    "learning_rate": 0.03
+  },
+  "coarse_best_score": 0.8443618474096283,
+  "refined_best_params": {
+    "subsample": 0.9,
+    "n_estimators": 100,
+    "min_samples_split": 4,
+    "min_samples_leaf": 7,
+    "max_features": 1.0,
+    "max_depth": 3,
+    "learning_rate": 0.05
+  },
+  "refined_best_score": 0.8447519309641475,
+  "validation_metrics": {
+    "R2": 0.8719327411967951,
+    "MAE": 2041.3532523393246,
+    "RMSE": 4415.519207612894
+  },
+  "test_metrics": {
+    "R2": 0.8482668552408916,
+    "MAE": 1938.5482529930027,
+    "RMSE": 4443.664297551855
+  },
+  "best_stage": 83,
+  "best_stage_validation_r2": 0.8725207584439467,
+  "all_models_metrics": [
+    {
+      "model": "Decision Tree",
+      "R2": 0.839899973890786,
+      "MAE": 1723.630834924401,
+      "RMSE": 4564.536813600133
+    },
+    {
+      "model": "Bagging",
+      "R2": 0.8475187948741552,
+      "MAE": 2010.7789249112243,
+      "RMSE": 4454.604696043066
+    },
+    {
+      "model": "Random Forest",
+      "R2": 0.848513734867768,
+      "MAE": 1964.7586015872866,
+      "RMSE": 4440.047761455653
+    },
+    {
+      "model": "Gradient Boosting",
+      "R2": 0.8482668552408916,
+      "MAE": 1938.5482529930027,
+      "RMSE": 4443.664297551855
+    }
+  ],
+  "top_features": [
+    {
+      "feature": "smoker_yes",
+      "importance": 0.5201111738057574
+    },
+    {
+      "feature": "age",
+      "importance": 0.3891345168336996
+    },
+    {
+      "feature": "children",
+      "importance": 0.04419382758707726
+    },
+    {
+      "feature": "bmi",
+      "importance": 0.03957819569620278
+    },
+    {
+      "feature": "sex_male",
+      "importance": 0.0028344786742150597
+    }
+  ]
+}
