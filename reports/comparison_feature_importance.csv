@@ -23,11 +23,11 @@ Random Forest,smoker_yes,0.5186101229107613
 Random Forest,region_northwest,0.003832865873578595
 Random Forest,region_southeast,0.0025763982045178737
 Random Forest,region_southwest,0.0019271020314121745
-Gradient Boosting,age,0.3891345168336996
-Gradient Boosting,bmi,0.03957819569620278
-Gradient Boosting,children,0.04419382758707726
-Gradient Boosting,sex_male,0.0028344786742150597
-Gradient Boosting,smoker_yes,0.5201111738057574
-Gradient Boosting,region_northwest,0.00011541836020401019
-Gradient Boosting,region_southeast,0.0018327790239045887
-Gradient Boosting,region_southwest,0.0021996100189393113
+XGBoost,age,0.17348085343837738
+XGBoost,bmi,0.02009805478155613
+XGBoost,children,0.06025692820549011
+XGBoost,sex_male,0.01391568873077631
+XGBoost,smoker_yes,0.700445294380188
+XGBoost,region_northwest,0.009667989797890186
+XGBoost,region_southeast,0.010887891985476017
+XGBoost,region_southwest,0.011247365735471249

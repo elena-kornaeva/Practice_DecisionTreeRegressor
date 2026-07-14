@@ -1,0 +1,9 @@
+Признак,Важность
+smoker_yes,0.7004453
+age,0.17348085
+children,0.06025693
+bmi,0.020098055
+sex_male,0.013915689
+region_southwest,0.011247366
+region_southeast,0.010887892
+region_northwest,0.00966799

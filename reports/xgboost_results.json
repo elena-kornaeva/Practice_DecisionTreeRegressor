@@ -1,0 +1,58 @@
+{
+  "coarse_best_params": {
+    "subsample": 0.8,
+    "reg_lambda": 3,
+    "reg_alpha": 0.1,
+    "n_estimators": 800,
+    "min_child_weight": 3,
+    "max_depth": 4,
+    "learning_rate": 0.01,
+    "colsample_bytree": 0.9
+  },
+  "coarse_best_score": 0.8399232150304169,
+  "refined_best_params": {
+    "subsample": 0.9,
+    "reg_lambda": 4.0,
+    "reg_alpha": 0.2,
+    "n_estimators": 700,
+    "min_child_weight": 5,
+    "max_depth": 3,
+    "learning_rate": 0.01,
+    "colsample_bytree": 1.0
+  },
+  "refined_best_score": 0.8425636241151547,
+  "validation_metrics": {
+    "R2": 0.8704548773940637,
+    "MAE": 2082.4035975691468,
+    "RMSE": 4440.923117066386
+  },
+  "test_metrics": {
+    "R2": 0.857913244293591,
+    "MAE": 1885.8295580572246,
+    "RMSE": 4300.092637228809
+  },
+  "best_stage": 648,
+  "best_stage_validation_r2": 0.8709055018517289,
+  "top_features": [
+    {
+      "Признак": "smoker_yes",
+      "Важность": 0.700445294380188
+    },
+    {
+      "Признак": "age",
+      "Важность": 0.17348085343837738
+    },
+    {
+      "Признак": "children",
+      "Важность": 0.06025692820549011
+    },
+    {
+      "Признак": "bmi",
+      "Важность": 0.02009805478155613
+    },
+    {
+      "Признак": "sex_male",
+      "Важность": 0.01391568873077631
+    }
+  ]
+}
