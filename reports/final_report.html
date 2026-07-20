@@ -1,0 +1,352 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>Отчет по практике</title><style>
+@page {
+    size: A4;
+    margin: 22mm 22mm 22mm 25mm;
+    @bottom-center {
+        content: counter(page);
+        font-family: "Times New Roman", Times, serif;
+        font-size: 11pt;
+    }
+}
+
+@page title {
+    size: A4;
+    margin: 20mm 15mm 20mm 30mm;
+    @bottom-center { content: ""; }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    background: #fff;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14pt;
+    line-height: 1.5;
+}
+
+body { counter-reset: figure table formula; }
+
+.title-page {
+    page: title;
+    height: 257mm;
+    break-after: page;
+    position: relative;
+    text-align: center;
+}
+
+.university-block {
+    font-size: 14pt;
+    line-height: 1.25;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.report-kind {
+    margin-top: 66mm;
+    font-size: 14pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.35;
+}
+
+.title-label {
+    margin-top: 26mm;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.report-title {
+    margin: 1mm auto 0;
+    max-width: 165mm;
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.people {
+    position: absolute;
+    top: 176mm;
+    right: 0;
+    width: 108mm;
+    text-align: left;
+    font-size: 14pt;
+    line-height: 1.25;
+}
+
+.people-group {
+    display: grid;
+    grid-template-columns: 38mm 1fr;
+    column-gap: 3mm;
+}
+.people-group + .people-group { margin-top: 10mm; }
+.people-label { font-weight: bold; }
+
+.title-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 1.4;
+}
+
+.front-page { break-after: page; }
+.chapter { break-before: page; }
+
+h1 {
+    margin: 0 0 10mm;
+    font-size: 18pt;
+    line-height: 1.25;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2 {
+    margin: 8mm 0 4mm;
+    font-size: 16pt;
+    line-height: 1.3;
+    text-align: left;
+    font-weight: bold;
+    break-after: avoid;
+}
+
+h3 {
+    margin: 6mm 0 3mm;
+    font-size: 14pt;
+    line-height: 1.3;
+    text-align: left;
+    font-weight: bold;
+    break-after: avoid;
+}
+
+p {
+    margin: 0 0 2.5mm;
+    text-align: justify;
+    text-indent: 12.5mm;
+    orphans: 3;
+    widows: 3;
+}
+
+.no-indent { text-indent: 0; }
+.center { text-align: center; text-indent: 0; }
+
+.toc-list,
+.figure-list,
+.source-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.toc-list li {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2mm;
+    margin: 0 0 3mm;
+    line-height: 1.3;
+}
+
+.toc-dots { border-bottom: 1px dotted #555; transform: translateY(-2mm); }
+
+.figure-list li {
+    margin: 0 0 1.2mm;
+    padding-left: 10mm;
+    text-indent: -10mm;
+    font-size: 12pt;
+    line-height: 1.2;
+}
+
+.figure-block {
+    margin: 5mm 0 3mm;
+    break-inside: auto;
+}
+
+.compact-figure { margin: 3mm 0 2mm; }
+.code-figure-block { margin: 1.5mm 0 1.5mm; }
+
+figure {
+    margin: 0;
+    text-align: center;
+    counter-increment: figure;
+    break-inside: avoid;
+}
+
+figure img {
+    display: block;
+    max-width: 100%;
+    max-height: 105mm;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto 3mm;
+}
+
+figure.tree-figure img { max-height: 92mm; }
+figure.wide-figure img { max-height: 90mm; }
+figure.correlation-figure img { max-height: 142mm; }
+figure.code-figure img { width: 88%; max-height: 70mm; }
+figure.dataset-figure img { max-height: 48mm; }
+figure.code-snippet pre {
+    margin: 0 auto 3mm;
+    width: 94%;
+    text-align: left;
+}
+
+figcaption {
+    font-size: 12pt;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.figure-explanation {
+    margin-top: 3mm;
+    text-indent: 12.5mm;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 5mm 0;
+    font-size: 11pt;
+    line-height: 1.25;
+    break-inside: avoid;
+    counter-increment: table;
+}
+
+caption {
+    caption-side: top;
+    margin-bottom: 2mm;
+    text-align: center;
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 1.6mm 1.8mm;
+    text-align: center;
+    vertical-align: middle;
+}
+
+th { font-weight: bold; }
+.metrics-table { font-size: 9.3pt; }
+.metrics-table th, .metrics-table td { padding: 1.1mm 1mm; }
+.compact-table { margin: 2.5mm 0; }
+.compact-table th, .compact-table td { padding: 1.1mm 1.4mm; }
+
+.formula {
+    position: relative;
+    margin: 4mm 0;
+    padding: 0 18mm;
+    text-align: center;
+    font-size: 14pt;
+    line-height: 1.5;
+    break-inside: avoid;
+    counter-increment: formula;
+}
+
+.formula::after {
+    content: "(" counter(formula) ")";
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14pt;
+    font-style: normal;
+}
+
+pre {
+    margin: 4mm 0 5mm;
+    padding: 3mm 4mm;
+    border: 1px solid #777;
+    background: #f5f5f5;
+    font-family: "Courier New", monospace;
+    font-size: 9.5pt;
+    line-height: 1.25;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    break-inside: avoid;
+}
+
+.source-list { counter-reset: source; }
+.source-list li {
+    counter-increment: source;
+    margin: 0 0 3mm;
+    padding-left: 10mm;
+    text-indent: -10mm;
+    text-align: justify;
+}
+.source-list li::before { content: counter(source) ". "; }
+
+a { color: #000; text-decoration: none; }
+.citation { white-space: nowrap; }
+.source-list a {
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+}
+</style></head><body>
+        <section class="title-page">
+          <div class="university-block">
+            Автономная некоммерческая организация высшего<br>
+            образования «Университет Иннополис»<br>
+            (АНО ВО «Университет Иннополис»)
+          </div>
+          <div class="report-kind">Отчет<br>по учебной практике</div>
+          <div class="title-label">на тему:</div>
+          <div class="report-title">Построение и анализ ансамблевых моделей на основе<br>
+          решающих деревьев: регрессия</div>
+          <div class="people">
+            <div class="people-group"><span class="people-label">Выполнили:</span><span>Камалов Булат<br>Умаханов Мансур</span></div>
+            <div class="people-group"><span class="people-label">Руководитель:</span><span>к.ф.-м.н, доцент<br>Корнаева Е.П.</span></div>
+          </div>
+          <div class="title-bottom">Иннополис - 2026</div>
+        </section>
+        <section class="front-page"><h1>Содержание</h1><ol class="toc-list"><li><span>Введение</span><span class="toc-dots"></span><span>5</span></li><li><span>1. Постановка задачи и описание датасета</span><span class="toc-dots"></span><span>6</span></li><li><span>2. Разведочный анализ и предобработка данных</span><span class="toc-dots"></span><span>7</span></li><li><span>3. Базовая модель и проблема переобучения</span><span class="toc-dots"></span><span>14</span></li><li><span>4. Ансамблевые модели: Bagging и Random Forest</span><span class="toc-dots"></span><span>18</span></li><li><span>5. Градиентный бустинг: XGBoost</span><span class="toc-dots"></span><span>23</span></li><li><span>6. Сравнительный анализ моделей</span><span class="toc-dots"></span><span>27</span></li><li><span>Заключение</span><span class="toc-dots"></span><span>33</span></li><li><span>Список использованных источников</span><span class="toc-dots"></span><span>35</span></li></ol></section><section class="front-page"><h1>Список рисунков</h1><ol class="figure-list"><li>Рисунок 1 - Фрагмент исходного датасета</li><li>Рисунок 2 - Проверка пропусков, дубликатов и удаление повторяющейся строки</li><li>Рисунок 3 - Распределение целевой переменной (charges)</li><li>Рисунок 4 - Диаграмма размаха целевой переменной (charges)</li><li>Рисунок 5 - Стоимость страховки в группах по признаку курения (smoker)</li><li>Рисунок 6 - Логарифмирование целевой переменной и обратное преобразование прогноза</li><li>Рисунок 7 - Корреляционные матрицы: а) с (charges); б) с log(charges + 1)</li><li>Рисунок 8 - Код комбинированного стратифицированного разделения</li><li>Рисунок 9 - Фрагмент датасета после предобработки</li><li>Рисунок 10 - Первые три уровня оптимизированного дерева решений</li><li>Рисунок 11 - Гиперпараметры широкого поиска оптимизированного дерева</li><li>Рисунок 12 - Лучшие гиперпараметры оптимизированного дерева решений</li><li>Рисунок 13 - Метрики дерева до и после оптимизации</li><li>Рисунок 14 - Остатки оптимизированного дерева на тестовой выборке</li><li>Рисунок 15 - Гиперпараметры широкого поиска модели Bagging</li><li>Рисунок 16 - Лучшие гиперпараметры Bagging</li><li>Рисунок 17 - Гиперпараметры широкого поиска модели Random Forest</li><li>Рисунок 18 - Лучшие гиперпараметры Random Forest</li><li>Рисунок 19 - Настройка OOB-оценки моделей Bagging и Random Forest</li><li>Рисунок 20 - Сравнение оценок OOB, KFold и test</li><li>Рисунок 21 - Важность признаков Random Forest</li><li>Рисунок 22 - Гиперпараметры широкого поиска модели XGBoost</li><li>Рисунок 23 - Лучшие гиперпараметры XGBoost</li><li>Рисунок 24 - Обоснование выбора 648 деревьев для XGBoost</li><li>Рисунок 25 - Остатки XGBoost на тестовой выборке</li><li>Рисунок 26 - Важность признаков XGBoost</li><li>Рисунок 27 - Сравнение моделей по R2 на train и test</li><li>Рисунок 28 - Сравнение MAE и RMSE на тестовой выборке</li><li>Рисунок 29 - Предсказанные и фактические значения для всех моделей</li><li>Рисунок 30 - Остатки моделей на тестовой выборке</li><li>Рисунок 31 - Сравнение важности признаков</li><li>Рисунок 32 - SHAP-анализ модели Random Forest</li><li>Рисунок 33 - Среднее время инференса моделей</li></ol></section><section class="front-page"><h1>Список таблиц</h1><ol class="figure-list"><li>Таблица 1 - Описательные статистики целевой переменной (charges)</li><li>Таблица 2 - Размеры итоговых выборок</li><li>Таблица 3 - Метрики моделей на train, validation и test</li></ol></section><section class="chapter" id="introduction"><h1>Введение</h1><p>Актуальность работы обусловлена ростом объема данных в страховании и необходимостью точнее оценивать индивидуальный риск клиента. Методы машинного обучения позволяют учитывать совместное влияние демографических и поведенческих факторов, благодаря чему расчет страховой стоимости становится более обоснованным. <a class="citation" href="#source-1">[1]</a></p><p>Цель работы - построить и сопоставить модели регрессии для прогнозирования стоимости медицинской страховки (charges), а также определить признаки, которые сильнее всего влияют на результат. В качестве факторов рассматриваются возраст клиента (age), индекс массы тела (bmi), количество детей (children), пол (sex), факт курения (smoker) и регион проживания (region).</p><p>Исследование проводилось последовательно. После разведочного анализа и предобработки данных было построено одиночное дерево решений, затем ансамбли Bagging и Random Forest, а на заключительном этапе - модель XGBoost. Разделение на train, validation и test позволило отделить подбор гиперпараметров от итоговой оценки качества и проверить модели на переобучение.</p></section><section class="chapter"><h1>1. Постановка задачи и описание датасета</h1><p>Решается задача регрессии: по характеристикам клиента требуется предсказать непрерывную величину стоимости медицинской страховки (charges). Исходный датасет включает 1338 наблюдений и 7 столбцов, из которых шесть являются входными признаками, а один - целевой переменной. <a class="citation" href="#source-9">[9]</a></p><p>К количественным признакам относятся возраст клиента (age), индекс массы тела (bmi) и количество детей (children). Пол клиента (sex), факт курения (smoker) и регион проживания (region) представлены категориальными признаками. Фрагмент исходных данных приведен на рисунке 1.</p><div class="figure-block"><figure class="dataset-figure"><img src="figures/raw_dataset_preview.png" alt="Фрагмент исходного датасета"><figcaption>Рисунок 1 - Фрагмент исходного датасета</figcaption></figure><p class="figure-explanation">В исходном наборе одновременно присутствуют числовые и строковые значения. До передачи данных моделям категориальные столбцы необходимо преобразовать в числовую форму, сохранив содержательный смысл категорий.</p></div><p>Проверка целостности показала отсутствие пропущенных значений, поэтому заполнение данных не потребовалось. Вместе с тем выражение (df.duplicated().sum()) обнаружило 1 полностью повторяющуюся строку. Она была удалена, и в дальнейшей работе использовались 1337 уникальных наблюдений.</p><div class="figure-block code-figure-block"><figure class="code-snippet"><pre>missing_by_column = df.isna().sum()
+duplicate_count = df.duplicated().sum()
+df = df.drop_duplicates().reset_index(drop=True)</pre><figcaption>Рисунок 2 - Проверка пропусков, дубликатов и удаление повторяющейся строки</figcaption></figure></div></section><section class="chapter"><h1>2. Разведочный анализ и предобработка данных</h1><h2>2.1. Выбор метрик качества</h2><p>До построения моделей были определены показатели, по которым будет оцениваться результат. Использовалось несколько метрик, поскольку одна величина не отражает все стороны ошибки. Коэффициент детерминации (R2) показывает долю вариации целевой переменной, объясненную моделью. Средняя абсолютная ошибка (MAE) характеризует типичное отклонение прогноза в долларах и сравнительно слабо зависит от единичных крупных промахов. <a class="citation" href="#source-1">[1]</a>, <a class="citation" href="#source-2">[2]</a></p><p>Среднеквадратическая ошибка (MSE) сильнее штрафует крупные ошибки, что важно для дорогих страховых случаев. Корень из среднеквадратической ошибки (RMSE) возвращает этот показатель в исходные единицы измерения. Средняя абсолютная процентная ошибка (MAPE) дополняет анализ относительной величиной ошибки, однако для небольших значений стоимости (charges) ее следует трактовать осторожно: деление на малое фактическое значение может непропорционально увеличить процентную ошибку.</p><div class="formula">R2 = 1 - Σ(y<sub>i</sub> - ŷ<sub>i</sub>)² / Σ(y<sub>i</sub> - ȳ)²</div><div class="formula">MAE = (1 / n) Σ |y<sub>i</sub> - ŷ<sub>i</sub>|</div><div class="formula">MSE = (1 / n) Σ (y<sub>i</sub> - ŷ<sub>i</sub>)²,&nbsp;&nbsp; RMSE = √MSE</div><div class="formula">MAPE = (100% / n) Σ |(y<sub>i</sub> - ŷ<sub>i</sub>) / y<sub>i</sub>|</div><p>Все метрики рассчитывались после обратного преобразования прогнозов в исходную шкалу стоимости. Их сопоставление на train, validation и test использовалось одновременно для ранжирования моделей и оценки устойчивости результатов.</p><h2>2.2. Анализ распределения целевой переменной</h2><p>После удаления повторяющейся строки были рассчитаны описательные статистики стоимости страховки (charges), представленные в таблице 1. Затем форма распределения и высокие значения были исследованы графически средствами Matplotlib и Seaborn. <a class="citation" href="#source-6">[6]</a>, <a class="citation" href="#source-7">[7]</a></p><table><caption>Таблица 1 - Описательные статистики целевой переменной (charges)</caption><thead><tr><th>Статистика</th><th>Значение</th></tr></thead><tbody><tr><td>Среднее</td><td>13 279.12</td></tr><tr><td>Медиана</td><td>9 386.16</td></tr><tr><td>Мода (оценка KDE)</td><td>5 770.63</td></tr><tr><td>Дисперсия</td><td>146 660 811.01</td></tr><tr><td>Стандартное отклонение</td><td>12 110.36</td></tr><tr><td>Коэффициент вариации</td><td>91.2%</td></tr><tr><td>Минимум</td><td>1 121.87</td></tr><tr><td>Максимум</td><td>63 770.43</td></tr></tbody></table><p>Стандартное отклонение (12 110.36 доллара) сопоставимо со средним значением (13 279.12 доллара), а коэффициент вариации равен 91.2%. Это характеризует высокий относительный разброс, но само по себе не определяет направление асимметрии. О правосторонней асимметрии свидетельствуют среднее, превышающее медиану (9 386.16 доллара), положительный коэффициент асимметрии и длинный хвост дорогих случаев до 63 770.43 доллара. Поскольку все точные значения (charges) уникальны, мода непрерывной переменной оценивалась как максимум ядерной оценки плотности KDE; получено значение около 5 770.63 доллара. Такая оценка показывает наиболее плотную область распределения и зависит от выбранной ширины сглаживания. <a class="citation" href="#source-10">[10]</a></p><p>Распределение представлено на рисунке 3: основная часть наблюдений сосредоточена в нижнем диапазоне, тогда как небольшая группа дорогих случаев формирует длинный правый хвост, что отражено в таблице 1 и выводах в п. 1.</p><div class="figure-block"><figure class=""><img src="figures/charges_distribution_report.png" alt="Распределение целевой переменной (charges)"><figcaption>Рисунок 3 - Распределение целевой переменной (charges)</figcaption></figure><p class="figure-explanation">На гистограмме среднее (13 279.12 доллара) расположено правее медианы (9 386.16 доллара). Коэффициент асимметрии равен 1.52: положительное значение соответствует длинному правому хвосту, поэтому исходное распределение имеет выраженную правостороннюю асимметрию.</p></div><div class="figure-block"><figure class=""><img src="figures/charges_boxplot_horizontal.png" alt="Диаграмма размаха целевой переменной (charges)"><figcaption>Рисунок 4 - Диаграмма размаха целевой переменной (charges)</figcaption></figure><p class="figure-explanation">Диаграмма размаха выделяет группу высоких значений за верхней границей. Однако положение точки за границей диаграммы само по себе не означает ошибку: необходимо проверить, объясняются ли такие значения характеристиками клиентов.</p></div><div class="figure-block"><figure class=""><img src="figures/charges_boxplot_by_smoker.png" alt="Стоимость страховки в группах по признаку курения (smoker)"><figcaption>Рисунок 5 - Стоимость страховки в группах по признаку курения (smoker)</figcaption></figure><p class="figure-explanation">Стоимость выше 35 000 долларов имеют 133 объектов, или 9.9% выборки. Среди них 97.7% являются курильщиками. Поэтому большинство высоких значений отражает реальную закономерность для группы (smoker = yes), а не ошибки измерения; удалять их не следует.</p></div><h3>Логарифмирование целевой переменной</h3><p>Чтобы уменьшить влияние длинного правого хвоста, модель обучалась на логарифме стоимости. К исходной величине прибавлялась единица, что делает преобразование корректным и для нулевых значений. После прогноза выполнялось обратное преобразование, поэтому метрики рассчитывались в долларах. <a class="citation" href="#source-5">[5]</a></p><div class="formula">y<sub>log</sub> = ln(y + 1)</div><div class="formula">ŷ = exp(ŷ<sub>log</sub>) - 1</div><div class="figure-block code-figure-block"><figure class="code-snippet"><pre>df[&#x27;charges_original&#x27;] = df[&#x27;charges&#x27;]
+df[&#x27;charges&#x27;] = np.log1p(df[&#x27;charges&#x27;])
+
+# обратное преобразование после прогноза
+y_pred = np.expm1(model.predict(X_test))</pre><figcaption>Рисунок 6 - Логарифмирование целевой переменной и обратное преобразование прогноза</figcaption></figure></div><p>После логарифмирования коэффициент асимметрии снизился с 1.52 до -0.09. Распределение стало значительно ближе к симметричному, а редкие дорогие полисы перестали чрезмерно доминировать в функции потерь.</p><h2>2.3. Анализ линейной зависимости признаков</h2><div class="figure-block"><figure class="correlation-figure"><img src="figures/correlation_matrix_original_target_large.png" alt="Корреляционная матрица с исходной целевой переменной (charges)"><figcaption>Рисунок 7, а - Корреляционная матрица с исходной целевой переменной (charges)</figcaption></figure><p class="figure-explanation">Для исходной стоимости наиболее заметна связь с возрастом клиента (age), однако ее коэффициент составляет только около 0,30. Умеренное значение коэффициента Пирсона может говорить о том, что связь нелинейна или зависит от взаимодействия возраста с курением и другими признаками, поскольку корреляция отражает только линейную составляющую зависимости. Между самими количественными признаками сильных линейных зависимостей не обнаружено.</p></div><div class="figure-block"><figure class="correlation-figure"><img src="figures/correlation_matrix_log_target_large.png" alt="Корреляционная матрица с log(charges + 1)"><figcaption>Рисунок 7, б - Корреляционная матрица с log(charges + 1)</figcaption></figure><p class="figure-explanation">После логарифмирования связь возраста (age) с целевой переменной возрастает примерно до 0,53. Линейная связь с индексом массы тела (bmi) и количеством детей (children) остается слабой. Это не исключает их влияния, а может говорить о нелинейном характере связи, который далее проверяется моделями на основе деревьев.</p></div><h2>2.4. Кодирование и разделение данных</h2><p>Категориальные признаки (sex), (smoker) и (region) были преобразованы с помощью OneHotEncoder. Кодировщик обучался только на тренировочной части, что исключает перенос информации из validation и test в этап подготовки признаков. <a class="citation" href="#source-2">[2]</a>, <a class="citation" href="#source-4">[4]</a></p><p>Стандартная стратификация для непрерывной целевой переменной невозможна. Поэтому упорядоченные значения (charges) были разбиты на пять интервалов (bins) с примерно одинаковым количеством объектов. Номер интервала объединялся с категорией (smoker), благодаря чему в train, validation и test сохранялись доля курильщиков и представительство разных диапазонов стоимости. Фрагмент кода разделения приведен на рисунке 8.</p><div class="figure-block"><figure class="code-figure"><img src="figures/stratified_split_code.png" alt="Код комбинированного стратифицированного разделения"><figcaption>Рисунок 8 - Код комбинированного стратифицированного разделения</figcaption></figure><p class="figure-explanation"></p></div><table class="compact-table"><caption>Таблица 2 - Размеры итоговых выборок</caption><thead><tr><th>Выборка</th><th>Количество объектов</th><th>Доля</th></tr></thead><tbody><tr><td>Train</td><td>801</td><td>60%</td></tr><tr><td>Validation</td><td>268</td><td>20%</td></tr><tr><td>Test</td><td>268</td><td>20%</td></tr></tbody></table><div class="figure-block"><figure class="dataset-figure"><img src="figures/processed_dataset_preview.png" alt="Фрагмент датасета после предобработки"><figcaption>Рисунок 9 - Фрагмент датасета после предобработки</figcaption></figure><p class="figure-explanation">После OneHotEncoding сформировано 8 входных признаков. Обозначения регионов: (r1) - northwest, (r2) - southeast, (r3) - southwest; регион northeast является базовой категорией и задается нулями во всех трех столбцах. Поле (charges) содержит логарифмированный таргет, а исходная стоимость хранится в (charges_original). Таким образом, после предобработки получен набор из 1337 уникальных наблюдений без пропусков; комбинированная стратификация обеспечила близкую структуру train, validation и test, а содержательно объяснимые дорогие случаи были сохранены.</p></div></section><section class="chapter"><h1>3. Базовая модель и проблема переобучения</h1><h2>3.1. Обучение дерева решений</h2><p>Дерево решений формирует прогноз с помощью последовательных разбиений пространства признаков. В каждом узле алгоритм выбирает локально лучшее условие по критерию ошибки. Такая модель хорошо интерпретируется, но без ограничений может создавать листья для отдельных наблюдений и запоминать тренировочную выборку. <a class="citation" href="#source-1">[1]</a>, <a class="citation" href="#source-2">[2]</a></p><p>Неограниченное дерево достигло глубины 20. На train оно получило R2 = 0.9992 и RMSE = 348.18, тогда как на test R2 снизился до 0.6617, а RMSE вырос до 6 635.40. Разрыв R2 составил 0.3375, что указывает на выраженное переобучение.</p><div class="formula">Ошибка = Bias² + Variance + Noise</div><p>Неограниченное дерево имеет низкое смещение, но высокий разброс. Ограничение глубины и размеров листьев немного увеличивает смещение, зато снижает чувствительность к конкретному составу train.</p><div class="figure-block"><figure class="tree-figure"><img src="figures/decision_tree_structure_first_3_levels.png" alt="Первые три уровня оптимизированного дерева решений"><figcaption>Рисунок 10 - Первые три уровня оптимизированного дерева решений</figcaption></figure><p class="figure-explanation">В каждом узле показано условие разбиения, а движение по ветвям последовательно сужает группу объектов. Для читаемости приведены только первые три уровня полного дерева.</p></div><h2>3.2. Оптимизация гиперпараметров</h2><p>Для настройки применялись GridSearchCV и пятиблочная кросс-валидация KFold с перемешиванием. Двухэтапный поиск означает, что сначала широкая сетка с крупным шагом определяет перспективную область параметров, а затем уточненная сетка проверяет соседние значения с меньшим шагом. В данном случае после широкого поиска глубина и размеры узлов проверялись с шагом 1 рядом с найденным оптимумом. Validation в поиске гиперпараметров не участвовала и использовалась для независимой оценки модели.</p><div class="figure-block code-figure-block"><figure class="code-snippet"><pre>coarse_grid = {
+    &#x27;max_depth&#x27;: [2, 4, 6, 8, 10, 12, 16, None],
+    &#x27;min_samples_split&#x27;: [2, 10, 20, 40],
+    &#x27;min_samples_leaf&#x27;: [1, 4, 8, 16],
+    &#x27;criterion&#x27;: [&#x27;squared_error&#x27;, &#x27;absolute_error&#x27;],
+    &#x27;ccp_alpha&#x27;: [0.0, 0.0001]
+}
+cv = KFold(n_splits=5, shuffle=True, random_state=42)
+grid = GridSearchCV(tree, coarse_grid, cv=cv, scoring=r2_original_scorer)</pre><figcaption>Рисунок 11 - Гиперпараметры широкого поиска оптимизированного дерева</figcaption></figure></div><p>На рисунке 12 представлены значения гиперпараметров оптимизированного дерева.</p><div class="figure-block"><figure class="wide-figure"><img src="figures/decision_tree_best_params.png" alt="Лучшие гиперпараметры оптимизированного дерева решений"><figcaption>Рисунок 12 - Лучшие гиперпараметры оптимизированного дерева решений</figcaption></figure><p class="figure-explanation">После двухэтапного поиска выбрана глубина 10. Параметры минимального размера узлов и стоимость отсечения (ccp_alpha) ограничивают дробление дерева и уменьшают его разброс.</p></div><div class="figure-block"><figure class="wide-figure"><img src="figures/decision_tree_overfitting_metrics.png" alt="Метрики дерева до и после оптимизации"><figcaption>Рисунок 13 - Метрики дерева до и после оптимизации</figcaption></figure><p class="figure-explanation">После оптимизации дерева R2 составил 0.8576 на train, 0.8785 на validation и 0.8399 на test. Ограничения почти не ухудшили test, но резко сократили разрыв с train, то есть уменьшили разброс модели.</p></div><div class="figure-block"><figure class=""><img src="figures/decision_tree_residuals_test.png" alt="Остатки оптимизированного дерева на тестовой выборке"><figcaption>Рисунок 14 - Остатки оптимизированного дерева на тестовой выборке</figcaption></figure><p class="figure-explanation">Большинство остатков сосредоточено около нуля, поэтому модель улавливает основную зависимость. Для полисов с фактической стоимостью не выше 20 000 долларов стандартное отклонение остатков равно 1 788.44, а MAE - 623.77. Для более дорогих полисов эти значения возрастают до 8 214.87 и 5 983.08 соответственно. Следовательно, разброс ошибок действительно увеличивается в дорогом сегменте. Полосы точек возникают из-за одинакового прогноза для объектов одного листа.</p></div><p>Двухэтапная настройка сохранила интерпретируемость дерева и заметно уменьшила переобучение. Однако чувствительность к дорогим случаям показала, что дальнейшее улучшение целесообразно искать в ансамблях, снижающих разброс модели.</p></section><section class="chapter"><h1>4. Ансамблевые модели: Bagging и Random Forest</h1><p>В Bagging каждое дерево обучается на собственной bootstrap-подвыборке, после чего прогнозы усредняются. Bootstrap-подвыборка формируется случайным извлечением объектов исходной train-выборки с возвращением: один объект может встретиться несколько раз, а часть наблюдений не попадает в конкретную подвыборку. Поэтому деревья получают различающиеся обучающие данные, а усреднение их прогнозов снижает разброс ансамбля. Random Forest дополнительно ограничивает набор признаков, доступных при поиске разбиения. Это делает отдельные деревья менее похожими друг на друга и повышает устойчивость совместного прогноза. Для корректного сравнения использовались те же признаки, логарифмированный таргет и разбиение данных. <a class="citation" href="#source-1">[1]</a>, <a class="citation" href="#source-2">[2]</a></p><h2>4.1. Оптимизация Bagging</h2><p>С помощью двухэтапной процедуры GridSearchCV были подобраны число деревьев (n_estimators), доля объектов (max_samples), доля признаков (max_features), глубина и минимальный размер узлов базового дерева. После широкого поиска на грубой сетке уточненная сетка строилась около лучших значений.</p><div class="figure-block code-figure-block"><figure class="code-snippet"><pre>bagging_grid = {
+    &#x27;n_estimators&#x27;: [50, 100, 200],
+    &#x27;max_samples&#x27;: [0.6, 0.8, 1.0],
+    &#x27;max_features&#x27;: [0.6, 0.8, 1.0],
+    &#x27;estimator__max_depth&#x27;: [4, 6, 8, 10, None],
+    &#x27;estimator__min_samples_split&#x27;: [2, 10, 20],
+    &#x27;estimator__min_samples_leaf&#x27;: [1, 4, 8]
+}</pre><figcaption>Рисунок 15 - Гиперпараметры широкого поиска модели Bagging</figcaption></figure></div><div class="figure-block"><figure class="wide-figure"><img src="figures/bagging_best_params.png" alt="Лучшие гиперпараметры Bagging"><figcaption>Рисунок 16 - Лучшие гиперпараметры Bagging</figcaption></figure><p class="figure-explanation">Итоговая конфигурация дерева определяет разнообразие базовых деревьев и объем данных для каждого из них. На тестовой выборке модель показала R2 = 0.8475 и RMSE = 4 454.60, улучшив оба показателя относительно оптимизированного дерева.</p></div><h2>4.2. Оптимизация Random Forest</h2><p>Random Forest оптимизировался по той же двухэтапной схеме. Помимо числа и глубины деревьев, параметр (max_features) задавал случайную долю признаков, доступных при разбиении, а (bootstrap) включал выбор объектов с возвращением.</p><div class="figure-block code-figure-block"><figure class="code-snippet"><pre>rf_grid = {
+    &#x27;n_estimators&#x27;: [100, 200],
+    &#x27;max_depth&#x27;: [4, 6, 8, 10, 12, None],
+    &#x27;min_samples_split&#x27;: [2, 10, 20],
+    &#x27;min_samples_leaf&#x27;: [1, 4, 8],
+    &#x27;max_features&#x27;: [&#x27;sqrt&#x27;, 0.7, 1.0],
+    &#x27;bootstrap&#x27;: [True],
+    &#x27;ccp_alpha&#x27;: [0.0, 0.0001]
+}</pre><figcaption>Рисунок 17 - Гиперпараметры широкого поиска модели Random Forest</figcaption></figure></div><div class="figure-block"><figure class="wide-figure"><img src="figures/random_forest_best_params.png" alt="Лучшие гиперпараметры Random Forest"><figcaption>Рисунок 18 - Лучшие гиперпараметры Random Forest</figcaption></figure><p class="figure-explanation">Параметр (max_features) управляет декорреляцией деревьев: слишком малое значение повышает разнообразие, но может ухудшить отдельные разбиения. На тестовой выборке Random Forest показал R2 = 0.8485 и RMSE = 4 440.05.</p></div><h2>4.3. Сравнение OOB-score и KFold</h2><p>OOB-score (out-of-bag score) - это внутренняя оценка качества bootstrap-ансамбля. Каждое дерево обучается на случайной выборке объектов с возвращением, поэтому часть наблюдений в его обучающую подвыборку не попадает. Для каждого объекта прогноз усредняется только по тем деревьям, которые этот объект не использовали при обучении; полученная оценка по смыслу напоминает проверку на отложенных данных и не требует выделять еще одну выборку. Чем ближе OOB R2 к результатам KFold и test, тем устойчивее выглядит оценка качества модели. Для одиночного дерева OOB-score не определен, поскольку оно не является bootstrap-композицией. <a class="citation" href="#source-2">[2]</a></p><div class="figure-block code-figure-block"><figure class="code-snippet"><pre>bagging_oob = BaggingRegressor(
+    estimator=best_tree, n_estimators=best_n,
+    bootstrap=True, oob_score=True, random_state=42
+)
+
+rf_oob = RandomForestRegressor(
+    n_estimators=best_n, bootstrap=True,
+    oob_score=True, random_state=42
+)</pre><figcaption>Рисунок 19 - Настройка OOB-оценки моделей Bagging и Random Forest</figcaption></figure></div><div class="figure-block"><figure class="wide-figure"><img src="figures/oob_kfold_test_comparison.png" alt="Сравнение оценок OOB, KFold и test"><figcaption>Рисунок 20 - Сравнение оценок OOB, KFold и test</figcaption></figure><p class="figure-explanation">Для Bagging OOB R2 равен 0,8628 против 0,8478 по KFold, для Random Forest - 0,8637 против 0,8466. Тестовые значения 0,8475 и 0,8485 близки к KFold, поэтому общий вывод о качестве не зависит от одной процедуры валидации.</p></div><div class="figure-block"><figure class=""><img src="figures/random_forest_feature_importance.png" alt="Важность признаков Random Forest"><figcaption>Рисунок 21 - Важность признаков Random Forest</figcaption></figure><p class="figure-explanation">Наибольший вклад в Random Forest имеют факт курения (smoker_yes) и возраст (age). Далее следуют индекс массы тела (bmi) и количество детей (children), причем оба признака дают заметный, но существенно меньший вклад. Пол и регион влияют слабо. Результат согласуется с предварительным анализом данных.</p></div><p>Модели Bagging и Random Forest улучшили R2 и RMSE относительно оптимизированного дерева, сохранив близкие результаты на train, validation и test. Небольшая разница между ансамблями может объясняться сильным влиянием курения: даже при случайном выборе признаков модели часто приходят к похожим ключевым разбиениям.</p></section><section class="chapter"><h1>5. Градиентный бустинг: XGBoost</h1><p>В отличие от Bagging и Random Forest, градиентный бустинг строит деревья последовательно: каждое новое дерево направлено на исправление ошибок уже сформированного ансамбля. В работе использовалась модель XGBRegressor из библиотеки XGBoost. <a class="citation" href="#source-1">[1]</a>, <a class="citation" href="#source-3">[3]</a></p><p>На каждом шаге вычисляются псевдоостатки, задающие направление уменьшения функции потерь. Для квадратичной ошибки они совпадают с обычными остатками. Новое дерево приближает эти значения, а величина его вклада регулируется скоростью обучения (learning_rate).</p><div class="formula">r<sub>i</sub><sup>(m)</sup> = -∂L(y<sub>i</sub>, F(x<sub>i</sub>)) / ∂F(x<sub>i</sub>)</div><div class="formula">F<sub>m</sub>(x) = F<sub>m-1</sub>(x) + ηh<sub>m</sub>(x)</div><h2>5.1. Двухэтапная оптимизация гиперпараметров</h2><p>Сначала RandomizedSearchCV проверил 60 комбинаций на пяти блоках KFold, затем еще 50 комбинаций были исследованы около лучшего решения. Средний CV R2 вырос с 0.8399 до 0.8426; наилучшее качество на validation достигнуто примерно после 648 деревьев.</p><div class="figure-block code-figure-block"><figure class="code-snippet"><pre>xgb_grid = {
+    &#x27;n_estimators&#x27;: [150, 250, 400, 600, 800],
+    &#x27;learning_rate&#x27;: [0.01, 0.02, 0.03, 0.05, 0.08],
+    &#x27;max_depth&#x27;: [2, 3, 4, 5],
+    &#x27;min_child_weight&#x27;: [1, 3, 5, 8],
+    &#x27;subsample&#x27;: [0.7, 0.8, 0.9, 1.0],
+    &#x27;colsample_bytree&#x27;: [0.7, 0.8, 0.9, 1.0],
+    &#x27;reg_lambda&#x27;: [0.5, 1, 3, 5, 10],
+    &#x27;reg_alpha&#x27;: [0, 0.01, 0.1, 0.5]
+}</pre><figcaption>Рисунок 22 - Гиперпараметры широкого поиска модели XGBoost</figcaption></figure></div><div class="figure-block"><figure class="wide-figure"><img src="figures/xgboost_best_params.png" alt="Лучшие гиперпараметры XGBoost"><figcaption>Рисунок 23 - Лучшие гиперпараметры XGBoost</figcaption></figure><p class="figure-explanation">Небольшая скорость обучения (learning_rate = 0,01), глубина 3 и регуляризация обеспечивают постепенное улучшение прогноза без чрезмерно сложных отдельных деревьев.</p></div><div class="figure-block"><figure class=""><img src="figures/xgboost_learning_curve.png" alt="Обоснование выбора 648 деревьев для XGBoost"><figcaption>Рисунок 24 - Обоснование выбора 648 деревьев для XGBoost</figcaption></figure><p class="figure-explanation">На увеличенном участке показаны контрольные значения Validation R2: 400 деревьев - 0.8644, 500 - 0.8690, 600 - 0.8707, 648 - 0.8709, 700 - 0.8705. Качество растет до 648 деревьев, где достигается максимум, а затем немного снижается; поэтому выбрано именно 648 деревьев.</p></div><div class="figure-block"><figure class=""><img src="figures/xgboost_residuals_test.png" alt="Остатки XGBoost на тестовой выборке"><figcaption>Рисунок 25 - Остатки XGBoost на тестовой выборке</figcaption></figure><p class="figure-explanation">Облако остатков в основном центрировано около нуля, поэтому общего систематического смещения не наблюдается. Для полисов с фактической стоимостью не выше 20 000 долларов стандартное отклонение остатков равно 1 828.46, а MAE - 992.36. В более дорогом сегменте показатели возрастают до 7 556.11 и 5 346.01. Следовательно, XGBoost также ошибается менее стабильно на дорогих полисах, хотя их разброс ниже, чем у оптимизированного дерева.</p></div><div class="figure-block"><figure class=""><img src="figures/xgboost_feature_importance.png" alt="Важность признаков XGBoost"><figcaption>Рисунок 26 - Важность признаков XGBoost</figcaption></figure><p class="figure-explanation">Признак курения (smoker_yes) формирует около 70% суммарной важности. Далее следуют возраст (age), количество детей (children) и индекс массы тела (bmi). Это подтверждает гипотезу EDA о сильном влиянии курения.</p></div><p>На test XGBoost достиг R2 = 0.8579 и RMSE = 4 300.09, показав лучший результат по этим двум метрикам. Близкие значения R2 на train (0.8733), validation (0.8914) и test не указывают на выраженное переобучение.</p></section><section class="chapter"><h1>6. Сравнительный анализ моделей</h1><p>Итоговое сравнение выполнялось на неизменных выборках. Test не участвовала ни в обучении, ни в подборе гиперпараметров и поэтому служила основной оценкой обобщающей способности. Помимо метрик анализировались остатки, фактические и предсказанные значения, важность признаков, SHAP и скорость инференса.</p><table class="metrics-table"><caption>Таблица 3 - Метрики моделей на train, validation и test</caption><thead><tr><th>Модель</th><th>Выборка</th><th>R2</th><th>MAE</th><th>MSE</th><th>RMSE</th><th>MAPE</th></tr></thead><tbody><tr><td>Оптимизированное дерево</td><td>Train</td><td>0.8576</td><td>1 705.66</td><td>2.14e+07</td><td>4 622.26</td><td>9.90%</td></tr><tr><td>Оптимизированное дерево</td><td>Validation</td><td>0.8785</td><td>1 564.36</td><td>1.85e+07</td><td>4 301.43</td><td>9.71%</td></tr><tr><td>Оптимизированное дерево</td><td>Test</td><td>0.8399</td><td>1 723.63</td><td>2.08e+07</td><td>4 564.54</td><td>10.38%</td></tr><tr><td>Bagging</td><td>Train</td><td>0.8756</td><td>1 954.27</td><td>1.87e+07</td><td>4 319.79</td><td>16.32%</td></tr><tr><td>Bagging</td><td>Validation</td><td>0.8918</td><td>1 817.67</td><td>1.65e+07</td><td>4 058.75</td><td>15.91%</td></tr><tr><td>Bagging</td><td>Test</td><td>0.8475</td><td>2 010.78</td><td>1.98e+07</td><td>4 454.60</td><td>17.11%</td></tr><tr><td>Random Forest</td><td>Train</td><td>0.8855</td><td>1 838.33</td><td>1.72e+07</td><td>4 144.22</td><td>15.39%</td></tr><tr><td>Random Forest</td><td>Validation</td><td>0.9006</td><td>1 683.34</td><td>1.51e+07</td><td>3 889.85</td><td>14.77%</td></tr><tr><td>Random Forest</td><td>Test</td><td>0.8485</td><td>1 964.76</td><td>1.97e+07</td><td>4 440.05</td><td>16.91%</td></tr><tr><td>XGBoost</td><td>Train</td><td>0.8733</td><td>1 962.75</td><td>1.90e+07</td><td>4 359.46</td><td>15.82%</td></tr><tr><td>XGBoost</td><td>Validation</td><td>0.8914</td><td>1 805.61</td><td>1.65e+07</td><td>4 065.35</td><td>14.63%</td></tr><tr><td>XGBoost</td><td>Test</td><td>0.8579</td><td>1 885.83</td><td>1.85e+07</td><td>4 300.09</td><td>15.87%</td></tr></tbody></table><p>Таблица 3 позволяет одновременно сравнить итоговое качество и разрыв между выборками. Все значения рассчитаны в исходной шкале после преобразования exp(prediction) - 1.</p><div class="figure-block"><figure class=""><img src="figures/comparison_r2_train_test.png" alt="Сравнение моделей по R2 на train и test"><figcaption>Рисунок 27 - Сравнение моделей по R2 на train и test</figcaption></figure><p class="figure-explanation">У всех оптимизированных моделей разрыв между train и test остается умеренным. Несмотря на то что метрики соизмеримы, наименьшая разница между метрикой R2 на обучающей и тестовой выборках наблюдается у модели XGBoost, тогда как у Random Forest различие между train и test немного больше, чем у остальных ансамблей.</p></div><div class="figure-block"><figure class=""><img src="figures/comparison_errors_models.png" alt="Сравнение MAE и RMSE на тестовой выборке"><figcaption>Рисунок 28 - Сравнение MAE и RMSE на тестовой выборке</figcaption></figure><p class="figure-explanation">RMSE находится в узком диапазоне примерно от 4 300 до 4 565 долларов. Все модели используют одни признаки и сталкиваются с одинаковыми редкими дорогими случаями, которые сильнее всего влияют на квадрат ошибки. У оптимизированного дерева MAE ниже, но RMSE выше, то есть большинство прогнозов близки к факту, однако отдельные крупные промахи сильнее ухудшают результат.</p></div><div class="figure-block"><figure class="wide-figure"><img src="figures/comparison_actual_vs_predicted_all_models.png" alt="Предсказанные и фактические значения для всех моделей"><figcaption>Рисунок 29 - Предсказанные и фактические значения для всех моделей</figcaption></figure><p class="figure-explanation">Чем ближе точки к диагонали, тем точнее прогноз. XGBoost формирует наиболее компактное облако, но в верхнем диапазоне стоимости все модели чаще отклоняются от идеальной линии.</p></div><div class="figure-block"><figure class="wide-figure"><img src="figures/comparison_residuals_all_models.png" alt="Остатки моделей на тестовой выборке"><figcaption>Рисунок 30 - Остатки моделей на тестовой выборке</figcaption></figure><p class="figure-explanation">У ансамблей облака остатков более сглажены, чем у одиночного дерева, а постоянного смещения относительно нуля не видно. Расширение облака справа подтверждает, что дорогие полисы остаются общей сложной областью.</p></div><div class="figure-block"><figure class="wide-figure"><img src="figures/comparison_feature_importance_all_models.png" alt="Сравнение важности признаков"><figcaption>Рисунок 31 - Сравнение важности признаков</figcaption></figure><p class="figure-explanation">Во всех ансамблях главным фактором остается курение (smoker_yes), далее обычно следуют возраст (age) и индекс массы тела (bmi). Пол и регион практически не влияют на целевую переменную, что согласуется с предварительным анализом.</p></div><p>SHAP (SHapley Additive exPlanations) - метод интерпретации, который раскладывает отдельный прогноз модели на базовое значение и вклады признаков. Положительное SHAP-значение повышает прогноз относительно базового уровня, отрицательное - понижает, а абсолютная величина показывает силу влияния признака для конкретного объекта. Обобщение таких значений по всей выборке позволяет оценить глобальную важность и направление воздействия признаков. <a class="citation" href="#source-8">[8]</a></p><div class="figure-block"><figure class="wide-figure"><img src="figures/comparison_shap_summary_random_forest.png" alt="SHAP-анализ модели Random Forest"><figcaption>Рисунок 32 - SHAP-анализ модели Random Forest</figcaption></figure><p class="figure-explanation">SHAP показывает не только силу, но и направление влияния. Курение и больший возраст чаще сдвигают прогноз log(charges + 1) вверх, что дополняет встроенную важность признаков содержательной интерпретацией.</p></div><div class="figure-block"><figure class=""><img src="figures/comparison_inference_speed.png" alt="Среднее время инференса моделей"><figcaption>Рисунок 33 - Среднее время инференса моделей</figcaption></figure><p class="figure-explanation">Одиночное дерево прогнозирует быстрее всего, XGBoost занимает промежуточное положение, а Bagging и Random Forest требуют больше времени из-за вычисления прогнозов множества деревьев. Для данного небольшого датасета все измеренные значения остаются практически приемлемыми.</p></div></section><section class="chapter"><h1>Заключение</h1><p>В ходе работы был исследован набор из 1338 наблюдений для прогнозирования стоимости медицинской страховки (charges). Пропущенных значений не обнаружено, одна полностью повторяющаяся строка удалена. Категориальные признаки преобразованы методом OneHotEncoding, а данные разделены на train, validation и test с комбинированной стратификацией по интервалам стоимости и признаку курения (smoker).</p><p>EDA выявил правостороннюю асимметрию целевой переменной: ее коэффициент составил 1.52. Среди 133 полисов дороже 35 000 долларов доля курильщиков достигла 97.7%, поэтому высокие значения были признаны содержательно объяснимыми и сохранены. Логарифмирование уменьшило асимметрию до -0.09.</p><p>На test оптимизированное дерево получило R2 = 0.8399, Bagging - 0.8475, Random Forest - 0.8485, а XGBoost - 0.8579. Лучшей по R2 и RMSE стала модель XGBoost: RMSE составил 4 300.09, MAE - 1 885.83. При этом оптимизированное дерево показало меньшие MAE (1 723.63) и MAPE (10.38%), поэтому выбор модели зависит от того, насколько критичны отдельные крупные ошибки.</p><p>Для XGBoost значения R2 на train, validation и test равны 0.8733, 0.8914 и 0.8579. Небольшой разрыв не указывает на выраженное переобучение, а test R2 означает, что модель объясняет около 85.8% вариации стоимости на ранее не использованных данных. Основная часть оставшейся ошибки связана с наиболее дорогими полисами.</p><p>Интерпретация лучшей модели согласуется с EDA. Признак курения (smoker_yes) формирует около 70% встроенной важности XGBoost, подтверждая концентрацию дорогих полисов среди курильщиков. Возраст (age) также остается значимым фактором и соответствует наиболее сильной корреляции с log(charges + 1). Индекс массы тела (bmi) и количество детей (children) дают меньший, преимущественно нелинейный вклад, а пол (sex) и регион (region) почти не влияют на прогноз.</p><p>В последующих работах настройку XGBoost можно сделать более глубокой. Для этого целесообразно увеличить число проверяемых комбинаций и расширить диапазоны количества деревьев (n_estimators), скорости обучения (learning_rate), глубины (max_depth), минимального веса дочернего узла (min_child_weight), долей объектов и признаков (subsample, colsample_bytree), а также коэффициентов регуляризации (reg_alpha, reg_lambda). После широкого поиска перспективную область следует исследовать с меньшим шагом либо применить байесовскую оптимизацию. Раннее прекращение обучения (early stopping) позволит выбирать число деревьев по качеству на validation, а повторная или вложенная кросс-валидация снизит зависимость результата от одного разбиения данных.</p><p>Дополнительный резерв качества связан с данными и постановкой задачи. Полезно добавить сведения о хронических заболеваниях, типе страхового плана, уровне дохода и истории обращений, проверить взаимодействия возраста (age), курения (smoker) и индекса массы тела (bmi), а также отдельно настроить функцию потерь для дорогих полисов. Можно сравнить обучение на исходной и логарифмической шкале, робастные функции потерь и интервальные прогнозы. Каждое улучшение необходимо подтверждать на одной и той же отложенной тестовой выборке, а итоговую модель дополнительно проверять на внешних или более поздних данных.</p><p>Итоговой моделью по совокупности R2 и RMSE выбран XGBoost. Оптимизированное дерево остается наиболее простым и быстрым решением, Random Forest дает близкое качество и удобен для OOB- и SHAP-анализа, однако XGBoost лучше всего сокращает крупные ошибки и обеспечивает наиболее высокий test R2.</p></section><section class="chapter"><h1>Список использованных источников</h1><ol class="source-list"><li id="source-1">Яндекс Образование. Учебник по машинному обучению: решающие деревья, ансамбли, градиентный бустинг, метрики и кросс-валидация. URL: <a href="https://education.yandex.ru/handbook/ml">https://education.yandex.ru/handbook/ml</a>.</li><li id="source-2">Scikit-learn documentation. DecisionTreeRegressor, BaggingRegressor, RandomForestRegressor, OneHotEncoder, GridSearchCV и RandomizedSearchCV. URL: <a href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a>.</li><li id="source-3">XGBoost documentation. XGBRegressor and gradient boosted decision trees. URL: <a href="https://xgboost.readthedocs.io/en/stable/">https://xgboost.readthedocs.io/en/stable/</a>.</li><li id="source-4">Pandas documentation. Работа с табличными данными и расчет описательных статистик. URL: <a href="https://pandas.pydata.org/docs/">https://pandas.pydata.org/docs/</a>.</li><li id="source-5">NumPy documentation. Численные преобразования, включая log1p и expm1. URL: <a href="https://numpy.org/doc/stable/">https://numpy.org/doc/stable/</a>.</li><li id="source-6">Matplotlib documentation. Построение и оформление графиков. URL: <a href="https://matplotlib.org/stable/">https://matplotlib.org/stable/</a>.</li><li id="source-7">Seaborn documentation. Статистическая визуализация данных. URL: <a href="https://seaborn.pydata.org/">https://seaborn.pydata.org/</a>.</li><li id="source-8">SHAP documentation. Интерпретация моделей машинного обучения на основе SHAP-значений. URL: <a href="https://shap.readthedocs.io/en/latest/">https://shap.readthedocs.io/en/latest/</a>.</li><li id="source-9">Medical Cost Personal Datasets. Набор данных о стоимости медицинской страховки. URL: <a href="https://www.kaggle.com/datasets/mirichoi0218/insurance">https://www.kaggle.com/datasets/mirichoi0218/insurance</a>.</li><li id="source-10">SciPy documentation. Ядерная оценка плотности распределения gaussian_kde. URL: <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html</a>.</li></ol></section></body></html>

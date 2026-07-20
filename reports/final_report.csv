@@ -1,6 +1,6 @@
 Раздел,Тип,Заголовок,Текст,Изображение
 Введение,Текст,Цель работы,Построить и сравнить модели для прогнозирования стоимости страховки (charges).,
-1. Постановка задачи и описание датасета,Текст,Описание данных,"Датасет содержит 1338 наблюдений, 6 признаков и целевую переменную (charges).",
+1. Постановка задачи и описание датасета,Текст,Описание данных,Датасет содержит 1338 строк; найден и удален один полный дубликат.,
 1. Постановка задачи и описание датасета,Рисунок,Статистики charges,Добавлена таблица статистик целевой переменной (charges).,C:\Users\bulki\OneDrive\Документы\GitHub\Practice_DecisionTreeRegressor\reports\figures\charges_statistics_table.png
 2. Разведочный анализ и предобработка данных,Текст,Анализ выбросов,Выше $35 000 находятся 133 объектов; 97.7% из них - курильщики.,
 2. Разведочный анализ и предобработка данных,Рисунок,Boxplot charges,Горизонтальный boxplot делает выбросы по (charges) более читаемыми.,C:\Users\bulki\OneDrive\Документы\GitHub\Practice_DecisionTreeRegressor\reports\figures\charges_boxplot_horizontal.png
@@ -9,10 +9,10 @@
 2. Разведочный анализ и предобработка данных,Рисунок,Сравнение корреляционных матриц,Добавлено сравнение корреляций с обычным таргетом (charges) и логарифмированным таргетом log(charges + 1).,C:\Users\bulki\OneDrive\Документы\GitHub\Practice_DecisionTreeRegressor\reports\figures\correlation_matrix_original_vs_log_target.png
 2. Разведочный анализ и предобработка данных,Код,Стратифицированное разделение,Использована комбинированная стратификация через интервалы (charges) и признак (smoker).,
 2. Разведочный анализ и предобработка данных,Рисунок,Итоговый датасет,Показан фрагмент данных после OneHotEncoding и логарифмирования.,C:\Users\bulki\OneDrive\Документы\GitHub\Practice_DecisionTreeRegressor\reports\figures\processed_dataset_preview.png
-3. Базовая модель и проблема переобучения,Текст,Оптимизированное дерево,Глубина дерева: 10; train R2=0.8576; test R2=0.8399.,
+3. Базовая модель и проблема переобучения,Текст,Неограниченное дерево,"Глубина 20, разрыв train-test R2=0.3375.",
 3. Базовая модель и проблема переобучения,Рисунок,Параметры дерева,Лучшие параметры оптимизированного дерева решений.,reports/figures/decision_tree_best_params.png
 4. Ансамблевые модели,Текст,Bagging и Random Forest,Ансамбли использовались для снижения разброса одиночного дерева.,
-5. Градиентный бустинг,Текст,Двухэтапный подбор,"Сначала широкий RandomizedSearchCV, затем уточнение вокруг лучших параметров.",
-6. Сравнительный анализ моделей,Рисунок,Train/test метрики,Добавлена итоговая таблица метрик на train и test.,C:\Users\bulki\OneDrive\Документы\GitHub\Practice_DecisionTreeRegressor\reports\figures\train_test_metrics_table.png
+5. Градиентный бустинг: XGBoost,Текст,Двухэтапный подбор,"Сначала широкий RandomizedSearchCV, затем уточнение вокруг лучших параметров.",
+6. Сравнительный анализ моделей,Рисунок,Метрики по выборкам,"Добавлена итоговая таблица train, validation и test.",C:\Users\bulki\OneDrive\Документы\GitHub\Practice_DecisionTreeRegressor\reports\figures\train_validation_test_metrics_table.png
 6. Сравнительный анализ моделей,Рисунок,R2 train/test,Добавлены разные цвета для train и test.,C:\Users\bulki\OneDrive\Документы\GitHub\Practice_DecisionTreeRegressor\reports\figures\comparison_r2_train_test.png
 Заключение,Текст,Итоговый вывод,Лучшая модель по test R2: XGBoost.,
